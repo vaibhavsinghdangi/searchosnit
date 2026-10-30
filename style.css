@@ -1,0 +1,36 @@
+*{box-sizing:border-box}
+:root{--ink:#eaf4f2;--mute:#9fbab6;--bg:#07141a;--glass:rgba(255,255,255,.07);--glass2:rgba(255,255,255,.12);--edge:rgba(255,255,255,.22);--acc:#5eead4;--amb:#ffb86b;color-scheme:dark light}
+@media (prefers-color-scheme:light){:root{--ink:#0b2128;--mute:#41606a;--bg:#dcebea;--glass:rgba(255,255,255,.5);--glass2:rgba(255,255,255,.75);--edge:rgba(255,255,255,.9);--acc:#0b6e63;--amb:#d9822b}}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;color:var(--ink);background:var(--bg);font:16px/1.55 "Segoe UI",system-ui,-apple-system,sans-serif}
+.bg{position:fixed;inset:0;overflow:hidden;z-index:-1}
+.bg i{position:absolute;border-radius:50%;filter:blur(70px);opacity:.75}
+.o1{width:46vmax;height:46vmax;left:-12vmax;top:-14vmax;background:#0e8f84}
+.o2{width:34vmax;height:34vmax;right:-10vmax;top:18vh;background:#3a5bd9;opacity:.5}
+.o3{width:22vmax;height:22vmax;left:30vw;bottom:-10vmax;background:var(--amb);opacity:.4}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+.lens,.t,.pane,.chips button,input{background:var(--glass);border:1px solid var(--edge);-webkit-backdrop-filter:blur(18px) saturate(150%);backdrop-filter:blur(18px) saturate(150%);box-shadow:inset 0 1px 0 var(--edge),0 10px 30px rgba(0,0,0,.18)}
+.lens{margin-top:36px;padding:34px 30px 30px;border-radius:28px;position:relative;overflow:hidden}
+.lens::after{content:"";position:absolute;width:260px;height:260px;right:-60px;top:-110px;border-radius:50%;background:radial-gradient(circle at 35% 35%,rgba(255,255,255,.5),rgba(255,255,255,0) 65%);pointer-events:none}
+h1{font:700 clamp(1.9rem,5vw,3rem)/1.1 Georgia,"Iowan Old Style",serif;margin:0 0 12px;letter-spacing:-.01em}
+.lens p{margin:0 0 20px;color:var(--mute);max-width:62ch}
+input{width:100%;padding:14px 18px;font:inherit;color:var(--ink);border-radius:999px;outline:none}
+input::placeholder{color:var(--mute)}
+input:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-top:20px;padding-bottom:6px;position:sticky;top:0;z-index:5}
+.chips button{font:inherit;font-size:.88rem;padding:7px 15px;border-radius:999px;color:var(--ink);cursor:pointer;white-space:nowrap;transition:background .2s}
+.chips button[aria-pressed="true"]{background:var(--acc);color:#04201b;border-color:var(--acc)}
+main h2,.pane h2{font:700 1.2rem Georgia,serif;margin:30px 0 12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.t{display:block;padding:15px 17px;border-radius:18px;color:inherit;text-decoration:none;transition:background .2s,transform .2s}
+.t:hover{background:var(--glass2);transform:translateY(-2px)}
+.t b{display:block;color:var(--acc)}
+.t span{font-size:.88rem;color:var(--mute)}
+.t i{font-style:normal;font-size:.72rem;margin-left:8px;padding:1px 8px;border-radius:99px;background:var(--amb);color:#2a1700}
+main ul{padding-left:20px;color:var(--mute)}main a{color:var(--acc)}
+.pane{margin-top:28px;margin-bottom:8px;padding:6px 26px 24px;border-radius:24px}
+.pane h3{font-size:1rem;margin:16px 0 3px}.pane p{margin:0;color:var(--mute);max-width:70ch}
+.none{color:var(--mute);padding:20px 0}
+footer{color:var(--mute);font-size:.85rem;padding-top:20px;padding-bottom:40px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.lens,.t,.pane,.chips button,input{background:var(--glass2)}}

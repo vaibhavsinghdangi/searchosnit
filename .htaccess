@@ -1,0 +1,9 @@
+<IfModule mod_headers.c>
+Header set Content-Security-Policy "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; frame-ancestors 'none'"
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "DENY"
+Header set Referrer-Policy "no-referrer"
+Header set Strict-Transport-Security "max-age=63072000; includeSubDomains"
+Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+Options -Indexes
